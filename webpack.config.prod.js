@@ -16,6 +16,7 @@ module.exports = {
   ],
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,
         use: [
@@ -23,7 +24,6 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: "../",
-              hmr: process.env.NODE_ENV === "development",
             },
           },
           "css-loader",
